@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPC Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main>
+      <h1><span>Stone-Paper-Scissor</span> <span>Game</span></h1>
+      <div class="container">
+        <div class="playField">
+          <div class="left" id="playerHand">
+            <img src="./assets/stone.png" alt="Stone.jpg" />
+          </div>
+          <div class="right" id="computerHand">
+            <span id="computer">Computer</span>
+            <img src="./assets/stone.png" alt="paper.jpg" />
+          </div>
+        </div>
+        <div class="scoreCard displayScore">
+          <span>Score : </span>
+          <span id="playerScore">0</span>
+          <span>|</span>
+          <span id="computerScore">0</span>
+        </div>
+      </div>
+
+      <div class="matches displayMatches">
+        <span>How many matches do you want to play with the computer?</span>
+        <input
+          type="text"
+          id="totalMatches"
+          placeholder="Enter Here as 4"
+          min="1"
+        />
+        <button id="startGame" onclick="play()">Play</button>
+      </div>
+
+      <div class="choose displayCard">
+        <h2>Choose your option</h2>
+
+        <div class="cardList">
+          <div class="card">
+            <img src="assets/paper.png" onclick="selectLeftHand(this)" />
+          </div>
+          <div class="card">
+            <img src="assets/stone.png" onclick="selectLeftHand(this)" />
+          </div>
+          <div class="card">
+            <img src="assets/scissor.png" onclick="selectLeftHand(this)" />
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <h2>Result</h2>
+        <p id="matchStatus">Start the game to see results here...</p>
+        <button type="button" onclick="reset()" id="resetBtn">Reset</button>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
